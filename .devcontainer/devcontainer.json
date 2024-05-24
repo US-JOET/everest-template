@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/debian
 {
-	"name": "Debian",
+	"name": "Khumbu",
 	"build": {
 		// Path is relative to the devcontainer.json file.
 		"dockerfile": "dev-kit.Dockerfile"
@@ -9,11 +9,14 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ms-vscode.cpptools-extension-pack",
-				"ms-azuretools.vscode-docker",
-				"eamodio.gitlens",
-				"DavidAnson.vscode-markdownlint",
-				"llvm-vs-code-extensions.vscode-clangd"
+                "/tmp/Visual\ Studio\ Code\ Extensions/DavidAnson.vscode-markdownlint-0.55.0.vsix",
+                "/tmp/Visual\ Studio\ Code\ Extensions/eamodio.gitlens-2024.5.2405.vsix",
+                "/tmp/Visual\ Studio\ Code\ Extensions/josetr.cmake-language-support-vscode-0.0.9.vsix",
+                "/tmp/Visual\ Studio\ Code\ Extensions/llvm-vs-code-extensions.vscode-clangd-0.1.28.vsix",
+                "/tmp/Visual\ Studio\ Code\ Extensions/ms-azuretools.vscode-docker-1.29.1.vsix",
+                "/tmp/Visual\ Studio\ Code\ Extensions/ms-vscode.cmake-tools-1.18.40.vsix",
+                "/tmp/Visual\ Studio\ Code\ Extensions/ms-vscode.cpptools-extension-pack-1.3.0.vsix",
+                "/tmp/Visual\ Studio\ Code\ Extensions/twxs.cmake-0.0.17.vsix"
 			],
 			"settings": {
 				"clangd.arguments": [
@@ -21,5 +24,8 @@
 				]
 			}
 		}
-	}
+	},
+    "mounts": [
+        "source=${localEnv:HOME}/workspace/everest-template/.devcontainer/Visual\ Studio\ Code\ Extensions,target=/tmp/Visual\ Studio\ Code\ Extensions,type=bind,consistency=cached"
+    ]
 }
